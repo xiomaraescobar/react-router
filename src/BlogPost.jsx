@@ -1,14 +1,15 @@
 // import React from 'react'
 
-import { Navigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { blogdata } from "./BlogData"
 
 const BlogPost = () => {
+    const navigate = useNavigate()
     const {slug} = useParams()
     const blogpost = blogdata.find(post => post.slug === slug)
 
     const returnToBlog = () => {
-        Navigate('/blog')
+        navigate('/blog')
     }
   return (
     <div>
